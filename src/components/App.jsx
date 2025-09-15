@@ -12,14 +12,20 @@ function App() {
   useEffect(() => {
     (async function getData() {
       const data = await getPokemons();
+      console.log(data);
       setJsonData(data);
       setLoading(false);
     })();
-  });
+  }, []);
 
-  if (loading) return <div>Loading</div>;
+  if (loading) return <div className="pokemon">Loading</div>;
 
-  return jsonData.name;
+  return (
+    <div className="pokemon">
+      <img src={jsonData.sprites.front_default} alt="pokemon-sprite" />
+      <div className="title">{jsonData.name}</div>
+    </div>
+  );
 }
 
 export default App;

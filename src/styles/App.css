@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.pokemon {
+  border: 1px solid wheat;
+  min-height: 100px;
+}
