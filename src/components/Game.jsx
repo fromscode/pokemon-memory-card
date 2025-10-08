@@ -1,6 +1,6 @@
 import "../api/pokemon.js";
 import getPokemons from "../api/pokemon.js";
-import randomizer from "../helpers/randomizer.js";
+import handleClick from "../helpers/handleClick.js";
 
 import { useEffect, useState } from "react";
 
@@ -30,7 +30,7 @@ function Game() {
       className="pokemon"
       key={index}
       onClick={() => {
-        const randomizedJsonData = randomizer(jsonData);
+        const randomizedJsonData = handleClick(jsonData, index);
         setJsonData(randomizedJsonData);
       }}
     >
