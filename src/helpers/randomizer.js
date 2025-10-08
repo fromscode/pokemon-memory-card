@@ -14,7 +14,7 @@ export default function randomizer(arr) {
     while (set.has(newIndex) || newIndex == index) {
       newIndex = getRandomInt(0, arr.length);
     }
-    newArr[newIndex] = value;
+    newArr[newIndex] = { ...value };
     set.add(newIndex);
   });
 

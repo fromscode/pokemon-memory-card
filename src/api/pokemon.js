@@ -6,6 +6,7 @@ function getRandomInt(min, max) {
 }
 
 export default async function getPokemons(n = 5) {
+  console.log("test");
   const responses = [];
   const set = new Set();
   while (responses.length != n) {
