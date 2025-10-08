@@ -4,17 +4,17 @@ import "../styles/App.css";
 import Game from "./Game";
 import Scores from "./Scores";
 
-import ScoreObj from "../data/ScoreObj";
+import Score from "../data/Score";
 
 import { useState } from "react";
 
 function App() {
-  const [Score, setScore] = useState(ScoreObj);
+  const [score, setScore] = useState(() => new Score());
 
   return (
     <>
-      <Scores score={Score} setScore={setScore} />
-      <Game score={Score} setScore={setScore} />
+      <Scores score={score} setScore={setScore} />
+      <Game score={score} setScore={setScore} />
     </>
   );
 }
