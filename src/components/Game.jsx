@@ -4,7 +4,7 @@ import handleClick from "../helpers/handleClick.js";
 
 import { useEffect, useState } from "react";
 
-function Game() {
+function Game({ score, setScore }) {
   const [jsonData, setJsonData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -30,7 +30,12 @@ function Game() {
       className="pokemon"
       key={index}
       onClick={() => {
-        const randomizedJsonData = handleClick(jsonData, index);
+        const randomizedJsonData = handleClick(
+          jsonData,
+          index,
+          score,
+          setScore,
+        );
         setJsonData(randomizedJsonData);
       }}
     >
