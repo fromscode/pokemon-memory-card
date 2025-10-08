@@ -12,10 +12,16 @@ export default async function getPokemons(n = 5) {
     const id = getRandomInt(1, 152);
     if (set.has(id)) continue;
     try {
-      const respose = await fetch(
+      const response = await fetch(
         `https://pokeapi.co/api/v2/pokemon-form/${id}/`,
       );
-      responses.push(await respose.json());
+      const { name, sprites } = await response.json();
+      const pokObj = {
+        name,
+        sprite: sprites.front_default,
+        hasBeenClicked: false,
+      };
+      responses.push(pokObj);
     } catch (err) {
       console.log(err);
     }

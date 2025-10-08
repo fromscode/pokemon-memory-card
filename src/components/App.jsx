@@ -3,6 +3,8 @@ import "../styles/App.css";
 
 import "../api/pokemon.js";
 import getPokemons from "../api/pokemon.js";
+import randomizer from "../helpers/randomizer.js";
+
 import { useEffect, useState } from "react";
 
 function App() {
@@ -28,17 +30,22 @@ function App() {
     ));
 
   return jsonData.map((data, index) => (
-    <div className="pokemon" key={index}>
+    <div
+      className="pokemon"
+      key={index}
+      onClick={() => {
+        const randomizedJsonData = randomizer(jsonData);
+        setJsonData(randomizedJsonData);
+      }}
+    >
       <img
         className="sprite"
-        src={data.sprites.front_default}
+        src={data.sprite}
         alt="pokemon-sprite"
         height="100"
         width="100"
       />
-      <div className="title">
-        {data.name.slice(0, 1).toUpperCase() + data.name.slice(1)}
-      </div>
+      <div className="title">{data.name.toUpperCase()}</div>
     </div>
   ));
 }
