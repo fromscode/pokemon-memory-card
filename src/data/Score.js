@@ -4,12 +4,17 @@ class Score {
 
   constructor(curr = 0, max = 0) {
     this.currScore = curr;
-    this.maxScore = max;
+    const localMax = localStorage.getItem("max");
+    console.log(localMax);
+    if (localMax) {
+      this.maxScore = Number.parseInt(localMax);
+    } else this.maxScore = max;
   }
 
   incrementScore() {
     ++this.currScore;
     this.maxScore = Math.max(this.currScore, this.maxScore);
+    localStorage.setItem("max", this.maxScore);
   }
 
   resetScore() {
