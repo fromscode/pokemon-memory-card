@@ -3,6 +3,7 @@ import "../styles/App.css";
 
 import Game from "./Game";
 import Scores from "./Scores";
+import Header from "./Header";
 
 import Score from "../data/Score";
 
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <Scores score={score} setScore={setScore} />
       <Game score={score} setScore={setScore} />
     </>

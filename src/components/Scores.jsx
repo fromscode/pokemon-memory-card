@@ -1,8 +1,7 @@
 function Scores({ score }) {
   return (
     <div>
-      Current Score: {score.currScore}
-      Max Score: {score.maxScore}
+      Current Score: {score.currScore} Max Score: {score.maxScore}
     </div>
   );
 }

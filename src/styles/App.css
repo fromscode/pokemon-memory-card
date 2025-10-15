@@ -1,11 +1,16 @@
 #root {
-  max-width: 1280px;
+  min-width: 100vw;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 
-  display: flex;
   gap: 20px;
+
+  background-color: darkslategrey;
+  color: white;
+
+  font-size: 1.3rem;
 }
 
 .pokemon {
@@ -15,9 +20,20 @@
 
   min-height: 125px;
   min-width: 100px;
+
+  background-color: rgb(28, 50, 50);
+}
+
+.pokemon:hover {
+  border: 1px solid gold;
+  cursor: pointer;
 }
 
 .sprite {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
+}
+
+.title {
+  font-size: 1.1rem;
 }
