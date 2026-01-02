@@ -1,4 +1,4 @@
-import "../styles/Game.css";
+import "../styles/App.css";
 
 import "../api/pokemon.js";
 import getPokemons from "../api/pokemon.js";
