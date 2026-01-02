@@ -9,8 +9,9 @@ import { useEffect, useState } from "react";
 function Game({ score, setScore }) {
   const [jsonData, setJsonData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isShuffling, setIsShuffling] = useState(false);
 
-  const numPokes = 20;
+  const numPokes = 5;
 
   useEffect(() => {
     (async function getData() {
@@ -31,30 +32,39 @@ function Game({ score, setScore }) {
       </div>
     );
 
+  const onCardClick = (index) => {
+    if (isShuffling) return;
+
+    setIsShuffling(true);
+
+    //flip all cards
+    setTimeout(() => {
+      const randomizedJsonData = handleClick(jsonData, index, score, setScore);
+      setJsonData(randomizedJsonData);
+    }, 300);
+
+    // flip back
+    setTimeout(() => {
+      setIsShuffling(false);
+    }, 600);
+  };
+
   return (
     <div className="cards">
       {jsonData.map((data, index) => (
         <div
-          className="pokemon"
+          className={`pokemon ${isShuffling ? "shuffling" : ""}`}
           key={index}
-          onClick={() => {
-            const randomizedJsonData = handleClick(
-              jsonData,
-              index,
-              score,
-              setScore,
-            );
-            setJsonData(randomizedJsonData);
-          }}
+          onClick={() => onCardClick(index)}
         >
-          <img
-            className="sprite"
-            src={data.sprite}
-            alt="pokemon-sprite"
-            height="100"
-            width="100"
-          />
-          <div className="title">{data.name.toUpperCase()}</div>
+          <div className="pokemon-inner">
+            <div className="pokemon-front">
+              <img className="sprite" src={data.sprite} alt="pokemon-sprite" />
+              <div className="title">{data.name.toUpperCase()}</div>
+            </div>
+
+            <div className="pokemon-back">?</div>
+          </div>
         </div>
       ))}
     </div>
