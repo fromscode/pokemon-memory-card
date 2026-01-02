@@ -21,11 +21,15 @@ function Game({ score, setScore }) {
   }, []);
 
   if (loading)
-    return Array.from({ length: numPokes }).map((_, index) => (
-      <div key={index} className="pokemon">
-        Loading
+    return (
+      <div className="cards">
+        {Array.from({ length: numPokes }).map((_, index) => (
+          <div key={index} className="pokemon">
+            Loading
+          </div>
+        ))}
       </div>
-    ));
+    );
 
   return (
     <div className="cards">

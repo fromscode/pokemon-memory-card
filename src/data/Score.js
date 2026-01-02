@@ -5,7 +5,6 @@ class Score {
   constructor(curr = 0, max = 0) {
     this.currScore = curr;
     const localMax = localStorage.getItem("max");
-    console.log(localMax);
     if (localMax) {
       this.maxScore = Number.parseInt(localMax);
     } else this.maxScore = max;
