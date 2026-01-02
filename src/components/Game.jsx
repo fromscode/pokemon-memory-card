@@ -4,7 +4,7 @@ import "../api/pokemon.js";
 import getPokemons from "../api/pokemon.js";
 import handleClick from "../helpers/handleClick.js";
 
-import pokeballImg from '../assets/poke-ball.png';
+import pokeballImg from '../assets/pokeball.png';
 
 import { useEffect, useState } from "react";
 
@@ -13,7 +13,7 @@ function Game({ score, setScore }) {
   const [loading, setLoading] = useState(true);
   const [isShuffling, setIsShuffling] = useState(false);
 
-  const numPokes = 5;
+  const numPokes = 20;
 
   useEffect(() => {
     (async function getData() {
