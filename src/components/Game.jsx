@@ -10,11 +10,11 @@ function Game({ score, setScore }) {
   const [jsonData, setJsonData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const numPokes = 5;
+  const numPokes = 20;
 
   useEffect(() => {
     (async function getData() {
-      const data = await getPokemons();
+      const data = await getPokemons(numPokes);
       setJsonData(data);
       setLoading(false);
     })();
