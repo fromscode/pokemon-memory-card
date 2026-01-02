@@ -4,6 +4,8 @@ import "../api/pokemon.js";
 import getPokemons from "../api/pokemon.js";
 import handleClick from "../helpers/handleClick.js";
 
+import pokeballImg from '../assets/poke-ball.png';
+
 import { useEffect, useState } from "react";
 
 function Game({ score, setScore }) {
@@ -63,7 +65,9 @@ function Game({ score, setScore }) {
               <div className="title">{data.name.toUpperCase()}</div>
             </div>
 
-            <div className="pokemon-back">?</div>
+            <div className="pokemon-back">
+              <img className="sprite" src={pokeballImg} alt="pokeball" />
+            </div>
           </div>
         </div>
       ))}
