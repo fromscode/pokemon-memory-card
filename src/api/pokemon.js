@@ -22,6 +22,7 @@ export default async function getPokemons(n = 5) {
         hasBeenClicked: false,
       };
       responses.push(pokObj);
+      set.add(id);
     } catch (err) {
       console.log(err);
     }
