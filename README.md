@@ -1,12 +1,24 @@
-# React + Vite
+# pokemon-memory-card
+Fun little memory card game with Pokemon.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Rules
+The objective is to click all the cards once without clicking on the same card twice.
+The cards shuffle after every click.
 
-Currently, two official plugins are available:
+## Points
+Clicking on a card not clicked before: 1 point
+Clicking on a card already clicked before: Game Reset
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Screenshots
 
-## Expanding the ESLint configuration
+Starting Screen: 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![On Startup](./screenshots/on-startup.png)
+
+Clicking on a card (shuffling):
+
+![Shuffling](./screenshots/on-click.png)
+
+## Acknowledgements
+
+This project uses the [Pokemon API](https://pokeapi.co/) to fetch the beautiful pokemon sprites.
