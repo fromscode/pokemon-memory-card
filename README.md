@@ -1,6 +1,8 @@
 # pokemon-memory-card
 Fun little memory card game with Pokemon.
 
+Play it yourself: [New Game](https://pokemon-memory-card-kappa.vercel.app/)
+
 ## Rules
 The objective is to click all the cards once without clicking on the same card twice.
 The cards shuffle after every click.
