@@ -9,6 +9,7 @@ The cards shuffle after every click.
 
 ## Points
 Clicking on a card not clicked before: 1 point
+
 Clicking on a card already clicked before: Game Reset
 
 ## Screenshots
